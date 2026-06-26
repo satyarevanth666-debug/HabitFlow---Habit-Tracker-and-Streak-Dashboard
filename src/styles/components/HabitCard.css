@@ -1,0 +1,214 @@
+.habit-card {
+  background: var(--card);
+  border: 1px solid rgba(148,163,184,0.16);
+  border-radius: 28px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.habit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139,92,246,0.4);
+}
+
+.habit-card.completed {
+  background: rgba(34,197,94,0.12);
+}
+
+.habit-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.habit-info {
+  display: flex;
+  gap: 16px;
+}
+
+.habit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.habit-details {
+  display: grid;
+  gap: 10px;
+}
+
+.habit-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.habit-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.priority-pill,
+.status-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.priority-low {
+  background: rgba(34,197,94,0.15);
+  color: #86efac;
+}
+
+.priority-normal {
+  background: rgba(59,130,246,0.15);
+  color: #bfdbfe;
+}
+
+.priority-high {
+  background: rgba(251,191,36,0.18);
+  color: #fcd34d;
+}
+
+.priority-critical {
+  background: rgba(239,68,68,0.18);
+  color: #fecaca;
+}
+
+.status-pill {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+.status-done {
+  background: rgba(34,197,94,0.18);
+  color: #dcfce7;
+}
+
+.status-due {
+  background: rgba(59,130,246,0.16);
+  color: #bfdbfe;
+}
+
+.habit-name {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.habit-category {
+  margin: 0;
+  color: var(--muted);
+}
+
+.habit-reminder {
+  margin-top: 10px;
+  color: #c7d2fe;
+  font-size: 0.9rem;
+}
+
+.habit-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.1);
+}
+
+.habit-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.habit-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.04);
+  padding: 14px 16px;
+  border-radius: 20px;
+}
+
+.stat-label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.streak-emoji {
+  margin-right: 6px;
+}
+
+.checkin-btn {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(99,102,241,0.2);
+  color: #fff;
+  font-weight: 700;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.checkin-btn:hover {
+  transform: translateY(-2px);
+}
+
+.checkin-btn.checked {
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+
+.checkin-btn.animating {
+  animation: pulse 0.5s ease;
+}
+
+.checkin-icon {
+  opacity: 0.9;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}

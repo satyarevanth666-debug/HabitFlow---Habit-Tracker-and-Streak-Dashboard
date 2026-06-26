@@ -1,0 +1,152 @@
+.pomodoro-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 24px;
+}
+
+.pomodoro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.pomodoro-header h2 {
+  margin: 0;
+}
+
+.pomodoro-badge {
+  background: rgba(6,182,212,0.12);
+  color: var(--secondary);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.pomodoro-display {
+  display: grid;
+  place-items: center;
+}
+
+.pomodoro-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pomodoro-circle.work {
+  color: var(--primary);
+}
+
+.pomodoro-circle.break {
+  color: var(--secondary);
+}
+
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.time-display {
+  position: relative;
+  z-index: 1;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.pomodoro-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.stat-label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.pomodoro-select {
+  display: grid;
+  gap: 10px;
+}
+
+.pomodoro-select label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.habit-select {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,0.16);
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+}
+
+.pomodoro-controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: 16px 24px;
+  border-radius: 20px;
+  min-width: 130px;
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+}
+
+.play-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.pause-btn {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+.reset-btn {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+@media (max-width: 680px) {
+  .pomodoro-container {
+    padding: 22px;
+  }
+
+  .pomodoro-stats {
+    grid-template-columns: 1fr;
+  }
+}

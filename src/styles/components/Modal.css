@@ -1,0 +1,79 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.75);
+  z-index: 1200;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, calc(100% - 40px));
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  z-index: 1201;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.modal-close {
+  background: rgba(255,255,255,0.08);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  color: var(--text);
+}
+
+.modal-body {
+  margin-top: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.modal-footer {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.modal-btn {
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.modal-btn:hover {
+  transform: translateY(-1px);
+}
+
+.modal-cancel {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+.modal-confirm {
+  background: var(--primary);
+  color: #fff;
+}
+
+.modal-danger {
+  background: var(--danger);
+}

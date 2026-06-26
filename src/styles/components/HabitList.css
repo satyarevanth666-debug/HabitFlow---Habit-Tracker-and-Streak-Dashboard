@@ -1,0 +1,23 @@
+.habit-list {
+  display: grid;
+  gap: 24px;
+}
+
+.empty-state {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 32px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.empty-message {
+  margin: 0;
+  font-size: 1rem;
+}
