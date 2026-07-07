@@ -38,7 +38,8 @@
   display: grid;
   place-items: center;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--text-on-accent);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }
 
@@ -92,8 +93,8 @@
 }
 
 .status-pill {
-  background: rgba(255,255,255,0.08);
-  color: var(--text);
+  background: var(--chip-bg);
+  color: var(--primary);
 }
 
 .status-done {
@@ -185,8 +186,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: rgba(99,102,241,0.2);
-  color: #fff;
+  background: linear-gradient(135deg, rgba(124,58,237,0.16), rgba(14,165,233,0.16));
+  color: var(--primary);
   font-weight: 700;
   transition: transform 0.25s ease, background 0.25s ease;
 }
@@ -196,7 +197,8 @@
 }
 
 .checkin-btn.checked {
-  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  background: linear-gradient(135deg, var(--success), var(--secondary));
+  color: var(--text-on-accent);
 }
 
 .checkin-btn.animating {

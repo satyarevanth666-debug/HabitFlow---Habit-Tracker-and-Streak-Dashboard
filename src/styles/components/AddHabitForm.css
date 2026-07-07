@@ -92,14 +92,14 @@
 }
 
 .color-option.selected {
-  border-color: white;
+  border-color: var(--primary);
 }
 
 .color-option .checkmark {
   position: absolute;
   right: 8px;
   bottom: 8px;
-  color: #fff;
+  color: var(--text-on-accent);
   font-size: 0.85rem;
 }
 
