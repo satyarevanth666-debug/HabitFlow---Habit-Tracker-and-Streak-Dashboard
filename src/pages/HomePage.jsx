@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HabitContext } from '../context/HabitContext';
-import { getStreakEmoji, getStreakStatus } from '../utils/streakUtils';
+import { getStreakEmoji } from '../utils/streakUtils';
 import '../styles/pages/HomePage.css';
 
 export const HomePage = () => {
   const navigate = useNavigate();
-  const { habits, getOverallStats } = useContext(HabitContext);
+  const { getOverallStats } = useContext(HabitContext);
   const stats = getOverallStats();
   const [totalCheckIns, setTotalCheckIns] = useState(0);
   const [displayedCheckIns, setDisplayedCheckIns] = useState(0);
@@ -27,16 +27,32 @@ export const HomePage = () => {
   return (
     <div className="home-page">
       <div className="home-content">
-        <div className="hero-section">
+        <section className="hero-section">
           <div className="hero-left">
+            <div className="eyebrow">✨ Calm, motivating, and built for consistency</div>
             <h1 className="hero-title">
               Build Better Habits.
               <br />
               <span className="gradient-text">One Day At A Time.</span>
             </h1>
             <p className="hero-subtitle">
-              Track consistency, build streaks, and become your best self. HabitFlow makes it simple to develop the habits that matter most.
+              Turn your goals into a beautiful routine with streaks, focus tools, and insights that make progress feel effortless.
             </p>
+
+            <div className="hero-badges">
+              <span>✓ No signup required</span>
+              <span>✓ Offline-friendly</span>
+              <span>✓ Beautiful daily insights</span>
+            </div>
+
+            <div className="hero-actions">
+              <button className="cta-button" onClick={() => navigate('/dashboard')}>
+                Begin Tracking →
+              </button>
+              <button className="secondary-button" onClick={() => navigate('/insights')}>
+                Explore Insights
+              </button>
+            </div>
 
             <div className="hero-stats">
               <div className="hero-stat">
@@ -55,29 +71,35 @@ export const HomePage = () => {
                 <div className="stat-label">Day Streak</div>
               </div>
             </div>
-
-            <button className="cta-button" onClick={() => navigate('/dashboard')}>
-              Begin Tracking →
-            </button>
           </div>
 
           <div className="hero-right">
             <div className="floating-illustration">
+              <div className="illustration-card">
+                <div className="mini-pill">Momentum snapshot</div>
+                <div className="snapshot-row">
+                  <span>Today</span>
+                  <strong>3 habits completed</strong>
+                </div>
+                <div className="snapshot-row">
+                  <span>Focus</span>
+                  <strong>25 min deep work</strong>
+                </div>
+                <div className="snapshot-row">
+                  <span>Streak</span>
+                  <strong>+{stats.currentStreak} days</strong>
+                </div>
+              </div>
               <div className="illustration-circle">
                 <svg viewBox="0 0 200 200" className="illustration-svg">
-                  {/* Rocket */}
-                  <circle cx="100" cy="100" r="80" fill="#1e293b" opacity="0.5" />
+                  <circle cx="100" cy="100" r="80" fill="#1e293b" opacity="0.45" />
                   <path d="M 100 50 L 110 100 L 100 110 L 90 100 Z" fill="#8b5cf6" />
                   <rect x="85" y="110" width="30" height="40" fill="#06b6d4" rx="5" />
                   <circle cx="85" cy="130" r="5" fill="#ef4444" />
                   <circle cx="115" cy="130" r="5" fill="#ef4444" />
-                  
-                  {/* Flame */}
                   <path d="M 80 155 Q 75 165 80 175 Q 85 165 80 155" fill="#f59e0b" opacity="0.8" />
                   <path d="M 100 155 Q 95 165 100 175 Q 105 165 100 155" fill="#f59e0b" opacity="0.8" />
                   <path d="M 120 155 Q 115 165 120 175 Q 125 165 120 155" fill="#f59e0b" opacity="0.8" />
-
-                  {/* Stars */}
                   <circle cx="40" cy="40" r="3" fill="#fbbf24" />
                   <circle cx="160" cy="50" r="2" fill="#fbbf24" />
                   <circle cx="170" cy="120" r="2.5" fill="#fbbf24" />
@@ -86,86 +108,92 @@ export const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="global-counter">
+        <section className="global-counter">
           <div className="counter-content">
             <div className="counter-label">Total Check-ins Logged</div>
             <div className="counter-value">{displayedCheckIns.toLocaleString()}</div>
-            <p className="counter-description">Everyone using HabitFlow is building consistency together</p>
+            <p className="counter-description">Every small win adds up when you track it beautifully.</p>
           </div>
-        </div>
+        </section>
 
-        <div className="features-section">
-          <h2 className="section-title">Why Choose HabitFlow?</h2>
+        <section className="features-section">
+          <div className="section-heading">
+            <div className="section-pill">Why it stands out</div>
+            <h2 className="section-title">Everything you need to stay consistent</h2>
+            <p className="section-subtitle">A polished experience that turns everyday habit building into something motivating and rewarding.</p>
+          </div>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">📊</div>
               <h3>Track Everything</h3>
-              <p>Monitor your daily progress with detailed analytics and insights about your habits.</p>
+              <p>Keep your routines visible with bright, clear progress and daily momentum insights.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">🔥</div>
               <h3>Build Streaks</h3>
-              <p>Visualize your consistency and watch your streaks grow. Never break a chain!</p>
+              <p>Watch your consistency grow and turn each completed day into a meaningful win.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">📈</div>
               <h3>See Progress</h3>
-              <p>View beautiful heatmaps and completion rates. Celebrate your momentum.</p>
+              <p>Enjoy vivid analytics and a calm visual flow that makes improvement easy to understand.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">⚡</div>
               <h3>Stay Focused</h3>
-              <p>Use the built-in Pomodoro timer to stay productive and track focus time.</p>
+              <p>Use the built-in Pomodoro timer to stay productive and protect your energy.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">❄️</div>
               <h3>Freeze Tokens</h3>
-              <p>Protect your streak when life gets hectic. Use your weekly freeze token wisely.</p>
+              <p>Protect your streak when life gets heavy with a smart weekly safeguard.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">💾</div>
               <h3>Local Storage</h3>
-              <p>All your data stays on your device. No account needed, pure privacy.</p>
+              <p>Your data stays on your device, so your progress feels private and secure.</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="motivation-section">
-          <h2 className="section-title">How It Works</h2>
-          <p className="section-subtitle">A fast, modern flow for turning habits into momentum.</p>
+        <section className="motivation-section">
+          <div className="section-heading">
+            <div className="section-pill">How it works</div>
+            <h2 className="section-title">A simple flow that keeps you moving</h2>
+          </div>
           <div className="steps">
             <div className="step">
               <div className="step-number">1</div>
               <div className="step-text">
                 <h4>Create Habits</h4>
-                <p>Pick the daily habits and outcomes that matter most.</p>
+                <p>Pick the routines and outcomes that matter most and shape your focus.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-number">2</div>
               <div className="step-text">
                 <h4>Daily Check-ins</h4>
-                <p>Tap complete each day to keep your routine visible.</p>
+                <p>Tap complete each day and let your progress stay visible in real time.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-number">3</div>
               <div className="step-text">
                 <h4>Build Streaks</h4>
-                <p>Track your momentum and see the streaks stack up.</p>
+                <p>Watch your momentum stack up and feel the satisfaction of consistency.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-number">4</div>
               <div className="step-text">
                 <h4>Stay Motivated</h4>
-                <p>Use smart insights to improve and stay on track.</p>
+                <p>Use clear insights and focus tools to keep your routine feeling alive.</p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
