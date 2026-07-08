@@ -2,10 +2,10 @@
   background: var(--card);
   border: 1px solid rgba(148,163,184,0.16);
   border-radius: 28px;
-  padding: 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -22,22 +22,22 @@
 .habit-card-header {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
-  align-items: start;
+  gap: 10px;
+  align-items: center;
 }
 
 .habit-info {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .habit-icon {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 18px;
   display: grid;
   place-items: center;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   color: var(--text-on-accent);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
@@ -45,14 +45,14 @@
 
 .habit-details {
   display: grid;
-  gap: 10px;
+  gap: 6px;
 }
 
 .habit-labels {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -125,12 +125,12 @@
 
 .habit-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .action-btn {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   border-radius: 16px;
   background: rgba(255,255,255,0.05);
   color: var(--text);
@@ -147,13 +147,14 @@
 .habit-description {
   margin: 0;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.5;
+  font-size: 0.92rem;
 }
 
 .habit-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
 }
 
 .stat {
@@ -180,12 +181,12 @@
 
 .checkin-btn {
   width: 100%;
-  padding: 16px 18px;
+  padding: 12px 14px;
   border-radius: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   background: linear-gradient(135deg, rgba(124,58,237,0.16), rgba(14,165,233,0.16));
   color: var(--primary);
   font-weight: 700;
